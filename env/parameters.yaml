@@ -1,0 +1,10 @@
+adminUser:
+  password: local:clusterv3/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: ldonley@cloudbees.com
+  token: local:clusterv3/pipelineUser:token
+  username: ld-bot
+prow:
+  hmacToken: local:clusterv3/prow:hmacToken

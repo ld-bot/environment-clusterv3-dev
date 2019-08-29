@@ -1,17 +1,22 @@
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  project: ""
+  clusterName: clusterv3
+  environmentGitOwner: ldon-dev-org
+  gitKind: github
+  gitName: github
+  gitServer: https://github.com
+  namespace: jx
+  project: ldonley
   provider: gke
-  zone: ""
-gitops: true
+  zone: us-central1-b
 environments:
 - key: dev
 - key: staging
 - key: production
+gitops: true
 ingress:
-  domain: ""
+  domain: 35.238.149.182.nip.io
   externalDNS: false
+  namespaceSubDomain: -jx.
   tls:
     email: ""
     enabled: false
@@ -20,15 +25,15 @@ kaniko: true
 secretStorage: local
 storage:
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://clusterv3-logs-e021de6b-ede5-4afe-98b2-42b4ae2ed61b
   reports:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://clusterv3-reports-09c966b4-df8f-469b-b9b9-8f9fb56cc438
   repository:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://clusterv3-repository-7f6d397d-776a-41b8-84df-2ce5d79b0f
 versionStream:
-  ref: "master"
+  ref: master
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
